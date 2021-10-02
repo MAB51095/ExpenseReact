@@ -1,0 +1,25 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.expense-item{
+    background-color: rgb(250, 217, 174);
+    color:#232323;
+    justify-content: space-around;
+    border-radius: 10px;
+    height: 50px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.9)
+}
+
+.expense-item
+,.expense-item-description
+,.expense-item-date
+,.expense-item-price{
+    display: flex;
+    align-items: center;
+}
+
+
+
