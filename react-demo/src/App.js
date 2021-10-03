@@ -1,17 +1,29 @@
-import logo from './logo.svg';
-import './components/ExpenseItem'
-import ExpenseItem from './components/ExpenseItem';
+import logo from "./logo.svg";
+import "./components/ExpenseItem";
+import ExpenseItem from "./components/ExpenseItem";
+import Expense from "./components/Expense";
 
 function App() {
+  const expenses = [
+    {
+      title: "Phone Repair",
+      date: new Date(2021, 10, 3),
+      amount: "1100.00",
+    },
+    {
+      title: "Fund Transfer",
+      date: new Date(2021, 10, 1),
+      amount: "5000.00",
+    },
+  ];
+
   return (
     <div className="App">
-      
-      <header className="App-header">
+      <header className="App-header flex-center">
         <h2>Expenses</h2>
-        
       </header>
-      <ExpenseItem></ExpenseItem> 
-      
+
+      <Expense expenses={expenses} />
     </div>
   );
 }
