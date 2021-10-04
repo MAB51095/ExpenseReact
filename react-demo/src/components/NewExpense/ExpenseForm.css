@@ -1,0 +1,29 @@
+.new-expense__controls {
+  background-color: rgb(83, 78, 73);
+
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid 1px #ddd3d3;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
+}
+
+.new-expense__control {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.new-expense__control label {
+  min-width: 100px;
+}
+
+.new-expense__control input {
+  min-height: 30px;
+
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
+}

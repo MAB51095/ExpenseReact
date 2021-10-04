@@ -1,4 +1,5 @@
 import React from "react";
+import "./ExpenseItemDate.css";
 
 const ExpenseItemDate = ({ date }) => {
   const months = [
@@ -20,11 +21,13 @@ const ExpenseItemDate = ({ date }) => {
   const year = date.getFullYear();
 
   return (
-    <div className="expense-item__date flex-center">
-      <div className="flex-center">
-        {month},{day}
+    <div className="flex-center">
+      <div className="expense-item__date flex-center">
+        <div className="flex-center">
+          {month},{day}
+        </div>
+        <div className="flex-center">{year}</div>
       </div>
-      <div className="flex-center">{year}</div>
     </div>
   );
 };

@@ -1,8 +1,6 @@
 import logo from "./logo.svg";
-import "./components/ExpenseItem";
-import ExpenseItem from "./components/ExpenseItem";
-import Expense from "./components/Expense";
-
+import Expense from "./components/Expense/Expense";
+import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
   const expenses = [
     {
@@ -22,7 +20,7 @@ function App() {
       <header className="App-header flex-center">
         <h2>Expenses</h2>
       </header>
-
+      <NewExpense />
       <Expense expenses={expenses} />
     </div>
   );

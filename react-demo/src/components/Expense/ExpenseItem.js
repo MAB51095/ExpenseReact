@@ -1,15 +1,14 @@
 import ExpenseItemDate from "./ExpenseItemDate";
-import "../componentsCss/ExpenseItem.css";
+import "./ExpenseItem.css";
 import { useState } from "react";
 
 const ExpenseItem = (props) => {
-  const { title, date, amount } = props;
+  const { date, amount } = props;
 
-  const [status, setStatus] = useState(props.status);
+  const [title, setTitle] = useState(props.title);
 
-  const updateStatus = () => {
-    if (status == "Verified") setStatus("Not Verified");
-    else setStatus("Verified");
+  const updateTitle = () => {
+    setTitle("Updated");
   };
 
   return (
@@ -19,9 +18,13 @@ const ExpenseItem = (props) => {
         <h2 className="expense-item__title flex-center">{title}</h2>
         <div className="expense-item__amount flex-center">{amount}</div>
       </div>
-      <div className="expense-item__status flex-center" onClick={updateStatus}>
-        {status}
-      </div>
+
+      <button
+        className="expense-item__button flex-center"
+        onClick={updateTitle}
+      >
+        <h4>Update Description</h4>
+      </button>
     </div>
   );
 };
