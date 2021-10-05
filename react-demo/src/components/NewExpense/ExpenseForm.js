@@ -1,37 +1,64 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm({ onAddExpense }) {
   const today = new Date().toISOString().split("T")[0];
 
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredInput, setEnteredInput] = useState({
+    enteredTitle: "",
+    enteredDate: "",
+    enteredAmount: "",
+  });
 
   const titleHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    setEnteredInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    });
   };
   const dateHandler = (event) => {
-    setEnteredDate(event.target.value);
+    setEnteredInput((prevState) => {
+      return { ...prevState, enteredDate: event.target.value };
+    });
   };
   const amountHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    setEnteredInput((prevState) => {
+      return { ...prevState, enteredAmount: event.target.value };
+    });
   };
 
-  const AddExpense = () => {
-    console.log({ enteredTitle, enteredDate, enteredAmount });
+  const AddExpense = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredInput.enteredTitle,
+      amount: enteredInput.enteredAmount,
+      date: new Date(enteredInput.enteredDate),
+    };
+
+    setEnteredInput({
+      enteredTitle: "",
+      enteredDate: "",
+      enteredAmount: "",
+    });
+
+    onAddExpense(expenseData);
   };
 
   return (
-    <form action="#">
+    <form onSubmit={AddExpense}>
       <div className="new-expense__controls flex-center">
         <div className="new-expense__control flex-center">
           <label>Title</label>
-          <input type="text" onChange={titleHandler}></input>
+          <input
+            value={enteredInput.enteredTitle}
+            type="text"
+            onChange={titleHandler}
+          ></input>
         </div>
         <div className="new-expense__control flex-center">
           <label>Date</label>
           <input
+            value={enteredInput.enteredDate}
             type="date"
             min="2021-01-01"
             max={today}
@@ -41,16 +68,14 @@ function ExpenseForm() {
         <div className="new-expense__control flex-center">
           <label>Amount</label>
           <input
+            value={enteredInput.enteredAmount}
             type="number"
             min="1.00"
             step="1.00"
             onChange={amountHandler}
           ></input>
         </div>
-        <button
-          className="expense-item__control flex-center"
-          onClick={AddExpense}
-        >
+        <button className="expense-item__control flex-center">
           <h3>Add Expense</h3>
         </button>
       </div>
