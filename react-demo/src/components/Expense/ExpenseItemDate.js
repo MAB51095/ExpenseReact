@@ -21,13 +21,11 @@ const ExpenseItemDate = ({ date }) => {
   const year = date.getFullYear();
 
   return (
-    <div className="flex-center">
-      <div className="expense-item__date flex-center">
-        <div className="flex-center">
-          {month},{day}
-        </div>
-        <div className="flex-center">{year}</div>
+    <div className="expense-item__date flex-center">
+      <div className="flex-center">
+        {month},{day}
       </div>
+      <div className="flex-center">{year}</div>
     </div>
   );
 };

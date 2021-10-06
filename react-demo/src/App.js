@@ -27,10 +27,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header flex-center">
-        <h2>Expenses</h2>
-      </header>
+      <h2 className="header">Add New Expense</h2>
       <NewExpense onAddExpense={onAddExpenseHandler} />
+      <h2 className="header">Expense List</h2>
       <Expense expenses={expenses} />
     </div>
   );

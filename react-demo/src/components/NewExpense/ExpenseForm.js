@@ -45,10 +45,12 @@ function ExpenseForm({ onAddExpense }) {
   };
 
   return (
-    <form onSubmit={AddExpense}>
+    <form className="form flex-center" onSubmit={AddExpense}>
       <div className="new-expense__controls flex-center">
         <div className="new-expense__control flex-center">
-          <label>Title</label>
+          <div className="label flex-center">
+            <label>Title</label>
+          </div>
           <input
             value={enteredInput.enteredTitle}
             type="text"
@@ -56,7 +58,9 @@ function ExpenseForm({ onAddExpense }) {
           ></input>
         </div>
         <div className="new-expense__control flex-center">
-          <label>Date</label>
+          <div className="label flex-center">
+            <label>Date</label>
+          </div>
           <input
             value={enteredInput.enteredDate}
             type="date"
@@ -66,19 +70,19 @@ function ExpenseForm({ onAddExpense }) {
           ></input>
         </div>
         <div className="new-expense__control flex-center">
-          <label>Amount</label>
+          <div className="label flex-center">
+            <label>Amount</label>
+          </div>
           <input
             value={enteredInput.enteredAmount}
             type="number"
-            min="1.00"
-            step="1.00"
+            min="0.01"
+            step="any"
             onChange={amountHandler}
           ></input>
         </div>
-        <button className="expense-item__control flex-center">
-          <h3>Add Expense</h3>
-        </button>
       </div>
+      <button className="expense-form__button flex-center">Add Expense</button>
     </form>
   );
 }
