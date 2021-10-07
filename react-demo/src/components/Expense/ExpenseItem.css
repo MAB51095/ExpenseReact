@@ -1,39 +1,23 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-grow: 1;
-}
-
 .expense-item {
-  background-color: rgb(83, 78, 73);
-  color: #dad6d6;
-
-  max-width: 1000px;
-  width: 90%;
-
-  margin: 10px 10px;
-
-  border-radius: 10px;
-  border: solid 1px #ddd3d3;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: rgb(31 31 38);
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 button {
   background-color: rgb(255 236 141);
-  margin: 10px;
+  margin: 20px;
+  margin-right: 10px;
   height: 20px;
-  border-radius: 10px;
-  color: rgb(83, 78, 73);
+
   border: none;
   min-width: 150px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-  padding: 20px 0;
+
   cursor: pointer;
-} */
+  justify-self: flex-end;
+}

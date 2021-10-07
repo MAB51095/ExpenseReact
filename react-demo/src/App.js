@@ -30,7 +30,9 @@ function App() {
       <h2 className="header">Add New Expense</h2>
       <NewExpense onAddExpense={onAddExpenseHandler} />
       <h2 className="header">Expense List</h2>
-      <Expense expenses={expenses} />
+      <div className="expenses flex-center">
+        <Expense expenses={expenses} />
+      </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ const ExpenseItem = (props) => {
         className="expense-item__button flex-center"
         onClick={updateTitle}
       >
-        <h4>Update Description</h4>
+        Update Description
       </button>
     </div>
   );
