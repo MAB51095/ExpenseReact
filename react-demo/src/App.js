@@ -32,7 +32,14 @@ function App() {
       date: { month: months[10], day: 10, year: 2021 },
       amount: "5000.00",
     },
+    {
+      title: "Mobile Purchase",
+      date: { month: months[10], day: 10, year: 2021 },
+      amount: "5000.00",
+    },
   ]);
+
+  const [selectedFilterMonth, setSelectedFilterMonth] = useState("");
 
   const onAddExpenseHandler = (newExpense) => {
     console.log(newExpense);
@@ -42,14 +49,28 @@ function App() {
     });
   };
 
+  const filterByDate = (event) => {
+    setSelectedFilterMonth(event.target.value);
+  };
+
   return (
     <div className="App">
       <h2 className="header">Add New Expense</h2>
       <NewExpense onAddExpense={onAddExpenseHandler} />
       <h2 className="header">Expense List</h2>
-
+      <div className="expense-filter flex-center">
+        Filter by month :
+        <select onChange={filterByDate}>
+          <DateFilterOptions months={months}></DateFilterOptions>
+        </select>
+      </div>
       <div className="expenses flex-center">
-        <Expense expenses={expenses} />
+        <Expense
+          expenses={expenses.filter(
+            (e) =>
+              e.date.month == selectedFilterMonth || selectedFilterMonth == ""
+          )}
+        />
       </div>
     </div>
   );

@@ -60,3 +60,21 @@ code {
   border-radius: 5px;
   margin: 20px;
 }
+.expense-filter {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.expense-filter select {
+  margin: 10px;
+  width: fit-content;
+  min-width: 100px;
+  text-align: center;
+  background-color: rgb(31 31 38);
+  border: none;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 40%);
+  min-height: 30px;
+  border-radius: 5px;
+  color: #ffec8d;
+  padding-right: 10px;
+}

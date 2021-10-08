@@ -1,9 +1,9 @@
 import React from "react";
 
-function DateFilterOptions({ dates }) {
-  return dates.map((date, id) => (
-    <option value={date} key={id}>
-      {date}
+function DateFilterOptions({ months }) {
+  return months.map((month, id) => (
+    <option value={month} key={month}>
+      {month == "" ? "--All--" : month}
     </option>
   ));
 }
