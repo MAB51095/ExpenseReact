@@ -4,6 +4,21 @@ import "./ExpenseForm.css";
 function ExpenseForm({ onAddExpense }) {
   const today = new Date().toISOString().split("T")[0];
 
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
   const [enteredInput, setEnteredInput] = useState({
     enteredTitle: "",
     enteredDate: "",
@@ -32,7 +47,11 @@ function ExpenseForm({ onAddExpense }) {
     const expenseData = {
       title: enteredInput.enteredTitle,
       amount: (Math.round(enteredInput.enteredAmount * 100) / 100).toFixed(2),
-      date: new Date(enteredInput.enteredDate),
+      date: {
+        month: months[new Date(enteredInput.enteredDate).getMonth()],
+        day: new Date(enteredInput.enteredDate).getDate(),
+        year: new Date(enteredInput.enteredDate).getFullYear(),
+      },
     };
 
     setEnteredInput({

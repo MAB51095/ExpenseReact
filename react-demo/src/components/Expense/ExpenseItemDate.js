@@ -2,23 +2,7 @@ import React from "react";
 import "./ExpenseItemDate.css";
 
 const ExpenseItemDate = ({ date }) => {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = months[date.getMonth() - 1];
-  const day = date.getDate();
-  const year = date.getFullYear();
+  const { month, day, year } = date;
 
   return (
     <div className="expense-item__date flex-center">
