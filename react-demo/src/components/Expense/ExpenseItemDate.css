@@ -1,13 +1,15 @@
 .expense-item__date {
   flex-direction: column;
-  border: solid 1px #ddd3d3;
+  border: solid 1px #423d3d83;
   border-radius: 10px;
 
   height: 80px;
-  width: 100px;
+  width: 20%;
+  max-width: 100px;
   margin: 10px;
 
   background-color: rgb(20, 26, 26);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   justify-self: flex-start;
+  margin-right: 20px;
 }

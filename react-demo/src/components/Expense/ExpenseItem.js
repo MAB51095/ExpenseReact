@@ -15,7 +15,7 @@ const ExpenseItem = (props) => {
     <div className="expense-item flex-center">
       <ExpenseItemDate date={date} />
       <div className="expense-item__description flex-center">
-        <h2 className="expense-item__title flex-center">{title}</h2>
+        <div className="expense-item__title flex-center">{title}</div>
         <div className="expense-item__amount flex-center">{amount}</div>
       </div>
 
