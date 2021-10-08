@@ -31,7 +31,7 @@ function ExpenseForm({ onAddExpense }) {
 
     const expenseData = {
       title: enteredInput.enteredTitle,
-      amount: enteredInput.enteredAmount,
+      amount: (Math.round(enteredInput.enteredAmount * 100) / 100).toFixed(2),
       date: new Date(enteredInput.enteredDate),
     };
 
@@ -55,6 +55,7 @@ function ExpenseForm({ onAddExpense }) {
             value={enteredInput.enteredTitle}
             type="text"
             onChange={titleHandler}
+            required
           ></input>
         </div>
         <div className="new-expense__control flex-center">
@@ -67,6 +68,7 @@ function ExpenseForm({ onAddExpense }) {
             min="2021-01-01"
             max={today}
             onChange={dateHandler}
+            required
           ></input>
         </div>
         <div className="new-expense__control flex-center">
@@ -79,6 +81,7 @@ function ExpenseForm({ onAddExpense }) {
             min="0.01"
             step="any"
             onChange={amountHandler}
+            required
           ></input>
         </div>
       </div>

@@ -18,7 +18,9 @@
   justify-content: flex-start;
   /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); */
 }
-
+.expense-item__description .expense-item__title {
+  min-width: 200px;
+}
 .expense-item__description .expense-item__title,
 .expense-item__description .expense-item__amount {
   flex-grow: 1;
