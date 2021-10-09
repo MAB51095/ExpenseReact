@@ -3,13 +3,13 @@ import "./ExpenseItem.css";
 import { useState } from "react";
 
 const ExpenseItem = (props) => {
-  const { date, amount } = props;
+  const { title, date, amount } = props;
 
-  const [title, setTitle] = useState(props.title);
+  // const [title, setTitle] = useState(props.title);
 
-  const updateTitle = () => {
-    setTitle("Updated");
-  };
+  // const updateTitle = () => {
+  //   setTitle("Updated");
+  // };
 
   return (
     <div className="expense-item flex-center">
@@ -19,12 +19,12 @@ const ExpenseItem = (props) => {
         <div className="expense-item__amount flex-center">{amount}</div>
       </div>
 
-      <button
+      {/* <button
         className="expense-item__button flex-center"
         onClick={updateTitle}
       >
         Update Description
-      </button>
+      </button> */}
     </div>
   );
 };

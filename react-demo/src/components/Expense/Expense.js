@@ -14,7 +14,6 @@ function Expense({ expenses }) {
       title={expense.title}
       date={expense.date}
       amount={expense.amount}
-      status="Not Verified"
       key={id}
     />
   ));
