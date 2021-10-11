@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import Expense from "./components/Expense/Expense";
-import NewExpense from "./components/NewExpense/NewExpense";
+import AddNewExpense from "./components/NewExpense/AddNewExpense";
 import { useState } from "react";
 import DateFilterOptions from "./components/Expense/Filter/DateFilterOptions";
 
@@ -55,8 +55,10 @@ function App() {
 
   return (
     <div className="App">
-      <h2 className="header">Add New Expense</h2>
-      <NewExpense onAddExpense={onAddExpenseHandler} />
+      {/* <h2 className="header">Add New Expense</h2>
+      <NewExpense onAddExpense={onAddExpenseHandler} /> */}
+      <AddNewExpense onAddExpense={onAddExpenseHandler} />
+
       <h2 className="header">Expense List</h2>
       <div className="expense-filter flex-center">
         Filter by month :
@@ -64,6 +66,7 @@ function App() {
           <DateFilterOptions months={months}></DateFilterOptions>
         </select>
       </div>
+
       <div className="expenses flex-center">
         <Expense
           expenses={expenses.filter(

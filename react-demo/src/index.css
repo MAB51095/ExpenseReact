@@ -51,6 +51,11 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .expenses {
@@ -77,4 +82,8 @@ code {
   border-radius: 5px;
   color: #ffec8d;
   padding-right: 10px;
+}
+
+.hide {
+  display: none;
 }
