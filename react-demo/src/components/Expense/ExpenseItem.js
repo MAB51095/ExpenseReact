@@ -18,13 +18,6 @@ const ExpenseItem = (props) => {
         <div className="expense-item__title flex-center">{title}</div>
         <div className="expense-item__amount flex-center">{amount}</div>
       </div>
-
-      {/* <button
-        className="expense-item__button flex-center"
-        onClick={updateTitle}
-      >
-        Update Description
-      </button> */}
     </div>
   );
 };

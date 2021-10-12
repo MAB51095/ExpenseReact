@@ -16,7 +16,8 @@
   border-radius: 5px;
   margin: 10px;
   justify-content: flex-start;
-  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); */
+
+  font-size: 1.5rem;
 }
 .expense-item__description .expense-item__title {
   min-width: 200px;
@@ -24,11 +25,19 @@
 .expense-item__description .expense-item__title,
 .expense-item__description .expense-item__amount {
   flex-grow: 1;
-  height: 80px;
-  font-size: 1.5rem;
+  min-height: 80px;
 }
 
 button {
   margin: 10px;
   margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+  .expense-item__description {
+    font-size: 1.25rem;
+  }
+  .expense-item__description .expense-item__title {
+    min-width: 10px;
+  }
 }

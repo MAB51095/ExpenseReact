@@ -55,8 +55,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <h2 className="header">Add New Expense</h2>
-      <NewExpense onAddExpense={onAddExpenseHandler} /> */}
       <AddNewExpense onAddExpense={onAddExpenseHandler} />
 
       <h2 className="header">Expense List</h2>
