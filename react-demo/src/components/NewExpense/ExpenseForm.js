@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm({ onAddExpense, className, onFormSwitch }) {
+function ExpenseForm({ onAddExpense, onFormSwitch }) {
   const today = new Date().toISOString().split("T")[0];
 
   const months = [
@@ -41,10 +41,6 @@ function ExpenseForm({ onAddExpense, className, onFormSwitch }) {
     });
   };
 
-  const Submit = (event) => {
-    event.preventDefault();
-    console.log(event);
-  };
   const AddExpense = (event) => {
     event.preventDefault();
 
@@ -74,7 +70,7 @@ function ExpenseForm({ onAddExpense, className, onFormSwitch }) {
   };
 
   return (
-    <form className={className} onSubmit={AddExpense}>
+    <form className="form flex-center" onSubmit={AddExpense}>
       <div className="new-expense__controls flex-center">
         <div className="new-expense__control flex-center">
           <div className="label flex-center">
