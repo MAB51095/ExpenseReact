@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm({ onAddExpense, onFormSwitch }) {
@@ -19,46 +19,22 @@ function ExpenseForm({ onAddExpense, onFormSwitch }) {
     "Dec",
   ];
 
-  const [enteredInput, setEnteredInput] = useState({
-    enteredTitle: "",
-    enteredDate: "",
-    enteredAmount: "",
-  });
-
-  const titleHandler = (event) => {
-    setEnteredInput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value };
-    });
-  };
-  const dateHandler = (event) => {
-    setEnteredInput((prevState) => {
-      return { ...prevState, enteredDate: event.target.value };
-    });
-  };
-  const amountHandler = (event) => {
-    setEnteredInput((prevState) => {
-      return { ...prevState, enteredAmount: event.target.value };
-    });
-  };
+  const enteredTitle = useRef("");
+  const enteredDate = useRef("");
+  const enteredAmount = useRef("");
 
   const AddExpense = (event) => {
     event.preventDefault();
 
     const expenseData = {
-      title: enteredInput.enteredTitle,
-      amount: (Math.round(enteredInput.enteredAmount * 100) / 100).toFixed(2),
+      title: enteredTitle.current.value,
+      amount: (Math.round(enteredAmount.current.value * 100) / 100).toFixed(2),
       date: {
-        month: months[new Date(enteredInput.enteredDate).getMonth()],
-        day: new Date(enteredInput.enteredDate).getDate(),
-        year: new Date(enteredInput.enteredDate).getFullYear(),
+        month: months[new Date(enteredDate.current.value).getMonth()],
+        day: new Date(enteredDate.current.value).getDate(),
+        year: new Date(enteredDate.current.value).getFullYear(),
       },
     };
-
-    setEnteredInput({
-      enteredTitle: "",
-      enteredDate: "",
-      enteredAmount: "",
-    });
 
     onFormSwitch();
 
@@ -76,23 +52,17 @@ function ExpenseForm({ onAddExpense, onFormSwitch }) {
           <div className="label flex-center">
             <label>Title</label>
           </div>
-          <input
-            value={enteredInput.enteredTitle}
-            type="text"
-            onChange={titleHandler}
-            required
-          ></input>
+          <input ref={enteredTitle} type="text" required></input>
         </div>
         <div className="new-expense__control flex-center">
           <div className="label flex-center">
             <label>Date</label>
           </div>
           <input
-            value={enteredInput.enteredDate}
+            ref={enteredDate}
             type="date"
             min="2021-01-01"
             max={today}
-            onChange={dateHandler}
             required
           ></input>
         </div>
@@ -101,11 +71,10 @@ function ExpenseForm({ onAddExpense, onFormSwitch }) {
             <label>Amount</label>
           </div>
           <input
-            value={enteredInput.enteredAmount}
+            ref={enteredAmount}
             type="number"
             min="0.01"
             step="any"
-            onChange={amountHandler}
             required
           ></input>
         </div>
